@@ -1,5 +1,5 @@
-import { IconButton, ListItem, ListItemText } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { IconButton, ListItem, ListItemText } from "@mui/material";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
@@ -8,7 +8,7 @@ const ExpenseItem = ({ expense }) => {
 
   return (
     <ListItem
-      sx={{ gap: 5, my: 2, p: 2 }}
+      sx={{ gap: 2, my: 1 }}
       secondaryAction={
         <IconButton
           edge="end"

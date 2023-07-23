@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import { Button, InputAdornment, InputLabel } from "@mui/material";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormLabel from "@mui/material/FormLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import FormLabel from "@mui/material/FormLabel";
-import { Button, InputAdornment, InputLabel } from "@mui/material";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 const AddExpense = () => {
@@ -17,11 +17,11 @@ const AddExpense = () => {
   const handleRadioBtnChange = (e) => {
     setPaymentType(e.target.value);
   };
+  // console.log(amount, paymentType);
 
   const onSubmit = (e) => {
     e.preventDefault();
     const newExpense = {
-      id: Math.floor(Math.random() * 100000000),
       amount: Number(amount),
       paymentType,
     };
@@ -47,7 +47,10 @@ const AddExpense = () => {
         type="number"
         required
         inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
-        sx={{ width: "100%" }}
+        sx={{
+          width: "100%",
+        }}
+        color="success"
         value={amount}
         onChange={(e) => {
           setAmount(e.target.value);
@@ -61,6 +64,7 @@ const AddExpense = () => {
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="cash"
         name="radio-buttons-group"
+        value={paymentType}
         onChange={handleRadioBtnChange}
         row
       >
@@ -68,7 +72,13 @@ const AddExpense = () => {
         <FormControlLabel value="credit" control={<Radio />} label="Credit" />
       </RadioGroup>
 
-      <Button variant="contained" type="submit" sx={{ width: "100%", my: 2 }}>
+      <Button
+        color="success"
+        variant="contained"
+        type="submit"
+        borderRadius="20px"
+        sx={{ width: "100%", my: 2 }}
+      >
         Submit
       </Button>
     </FormControl>

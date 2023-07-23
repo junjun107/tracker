@@ -1,3 +1,5 @@
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
@@ -22,19 +24,50 @@ const Balance = () => {
   );
 
   return (
-    <Box sx={{ textAlign: "center" }}>
-      <Box>
-        <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-          Total Cash Expense
-        </Typography>
-        <h2>${totalCashExpense}</h2>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        my: 1,
+      }}
+    >
+      <Box sx={{ textAlign: "center", mb: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          <LocalAtmIcon color="success" />
+          <Typography sx={{ py: 2 }} variant="h6" component="div">
+            Total Cash Expense
+          </Typography>
+        </Box>
+        <Box>
+          <Typography variant="h4">${totalCashExpense}</Typography>
+        </Box>
       </Box>
 
-      <Box>
-        <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-          Total Credit Expense
-        </Typography>
-        <h2>${totalCreditExpense}</h2>
+      <Box sx={{ textAlign: "center", mb: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          <CreditCardIcon color="success" />
+          <Typography sx={{ py: 2 }} variant="h6" component="div">
+            Total Credit Expense
+          </Typography>
+        </Box>
+        <Box>
+          <Typography variant="h4">${totalCreditExpense}</Typography>
+        </Box>
       </Box>
     </Box>
   );

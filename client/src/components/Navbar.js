@@ -1,28 +1,23 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 
 export default function Navbar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box
+      sx={{
+        flexGrow: 1,
+        mb: 1,
+      }}
+    >
+      <AppBar
+        position="static"
+        sx={{ bgcolor: "success.main", color: "success.contrastText" }}
+      >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             CASPER
           </Typography>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
-          <Button color="inherit">About</Button>
+
+          {/* <Button color="inherit">About</Button> */}
         </Toolbar>
       </AppBar>
     </Box>
