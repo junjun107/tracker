@@ -10,7 +10,12 @@ connectDB();
 const expenses = require("./routes/expenses");
 
 const app = express();
+
 app.use(express.json());
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "client/build")));
+
 app.use("/api/v1/expenses", expenses);
 
 app.use(express.urlencoded({ extended: true }));

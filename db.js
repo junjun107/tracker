@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { async } = require("rxjs");
 
 const connectDB = async () => {
   try {
