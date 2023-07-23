@@ -1,10 +1,10 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./db");
-
+const mongoose = require("mongoose");
 dotenv.config({ path: "./config.env" });
 
-connectDB();
+// connectDB();
 
 const expenses = require("./routes/expenses");
 
@@ -18,7 +18,20 @@ app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(
-  PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on ${PORT}`)
-);
+// app.listen(
+//   PORT,
+//   console.log(`Server running in ${process.env.NODE_ENV} mode on ${PORT}`)
+// );
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("Mongodb connected");
+    app.listen(
+      PORT,
+      console.log(`Server running in ${process.env.NODE_ENV} mode on ${PORT}`)
+    );
+  })
+  .catch((err) => {
+    console.log({ err });
+    process.exit(1);
+  });
