@@ -57,9 +57,13 @@ const AddExpense = () => {
         }}
       />
 
-      <FormLabel sx={{ mt: 4, mb: 1 }} id="demo-radio-buttons-group-label">
+      <FormLabel
+        sx={{ mt: 4, mb: 1, color: "success.main" }}
+        id="demo-radio-buttons-group-label"
+      >
         Payment Type
       </FormLabel>
+
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="cash"
@@ -76,8 +80,7 @@ const AddExpense = () => {
         color="success"
         variant="contained"
         type="submit"
-        borderRadius="20px"
-        sx={{ width: "100%", my: 2 }}
+        sx={{ width: "100%", my: 2, fontSize: "20px", borderRadius: "20px" }}
       >
         Submit
       </Button>

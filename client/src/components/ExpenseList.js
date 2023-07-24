@@ -26,7 +26,14 @@ const TransactionList = () => {
         />
       </Divider>
 
-      <List>
+      <List
+        sx={{
+          backgroundColor: "#ccd5ae",
+          borderRadius: "20px",
+          px: 3,
+          mt: 2,
+        }}
+      >
         {expenses.map((expense) => (
           <ExpenseItem expense={expense} key={expense._id} />
         ))}
