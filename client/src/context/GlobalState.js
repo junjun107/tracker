@@ -24,7 +24,10 @@ export const GlobalProvider = ({ children }) => {
     };
 
     try {
-      const res = await axios.post("/api/v1/expenses", expense, config);
+      const res = await axios.post(
+        "https://shopping-tracker-03b6.onrender.com/api/v1/expenses",
+        expense
+      );
 
       dispatch({
         type: "ADD_EXPENSE",
@@ -39,7 +42,9 @@ export const GlobalProvider = ({ children }) => {
   }
   async function getExpenses() {
     try {
-      const res = await axios.get("/api/v1/expenses");
+      const res = await axios.get(
+        "https://shopping-tracker-03b6.onrender.com/api/v1/expenses"
+      );
       dispatch({
         type: "GET_EXPENSES",
         payload: res.data.data,
@@ -54,7 +59,9 @@ export const GlobalProvider = ({ children }) => {
 
   async function deleteExpense(id) {
     try {
-      await axios.delete(`/api/v1/expenses/${id}`);
+      await axios.delete(
+        `https://shopping-tracker-03b6.onrender.com/api/v1/expenses/${id}`
+      );
       dispatch({
         type: "DELETE_EXPENSE",
         payload: id,
