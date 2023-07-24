@@ -12,11 +12,7 @@ const TransactionList = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        overflow: "auto",
-      }}
-    >
+    <Box sx={{}}>
       <Divider>
         <Chip
           variant="outlined"
@@ -28,10 +24,12 @@ const TransactionList = () => {
 
       <List
         sx={{
+          maxHeight: 300,
           backgroundColor: "#ccd5ae",
           borderRadius: "20px",
           px: 3,
           mt: 2,
+          overflow: "auto",
         }}
       >
         {expenses.map((expense) => (

@@ -14,10 +14,8 @@ export default function Navbar() {
       >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            CASPER
+            LISTS
           </Typography>
-
-          {/* <Button color="inherit">About</Button> */}
         </Toolbar>
       </AppBar>
     </Box>

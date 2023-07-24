@@ -10,7 +10,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="https://shopping-tracker-03b6.onrender.com/">
         Your Website
       </Link>{" "}
       {new Date().getFullYear()}.

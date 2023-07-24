@@ -1,10 +1,14 @@
-import { Button, InputAdornment, InputLabel } from "@mui/material";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
+import {
+  Button,
+  InputAdornment,
+  InputLabel,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  OutlinedInput,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 import React, { useContext, useState } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
