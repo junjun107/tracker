@@ -1,5 +1,5 @@
 {
-  "proxy": "https://shopping-tracker-03b6.onrender.com/",
+  "proxy": "https://shopping-tracker-03b6.onrender.com",
   "name": "expense-tracker-react",
   "version": "0.1.0",
   "private": true,
