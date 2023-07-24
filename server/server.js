@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./db");
 const mongoose = require("mongoose");
+const cors = require("cors");
 dotenv.config({ path: "./config.env" });
 
 // connectDB();
@@ -9,7 +10,7 @@ dotenv.config({ path: "./config.env" });
 const expenses = require("./routes/expenses");
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/v1/expenses", expenses);
